@@ -31,7 +31,7 @@ def gen_captcha_text_image(image_path,
                            fg_color=(0, 0, 255),
                            xy=None,
                            font_size=47,
-                           font_type="msyh.ttf",
+                           font_type=None,
                            length=4,
                            draw_lines=False,
                            n_line=(1, 2),
@@ -133,13 +133,15 @@ def gen_captcha_text_image(image_path,
                 if tmp > 100 - chance:
                     draw.point((w, h), fill=(0, 0, 0))
 
-    def create_text(xy_):
+    def create_text(xy_, font_type_):
         """绘制验证码字符
         """
         c_chars = get_chars()
         text_ = '%s' % ' '.join(c_chars)  # 每个字符前后以空格隔开
-
-        font = ImageFont.truetype(font_type, font_size)
+        if font_type_ is None:
+            curr_path = os.path.dirname(os.path.abspath(__file__))
+            font_type_ = os.path.join(curr_path, "packages", "msyh.ttf")
+        font = ImageFont.truetype(font_type_, font_size)
         if xy_ is None:
             font_width, font_height = font.getsize(text_)
             xy_ = ((width - font_width) / 3, (height - font_height) / 3)  # 左右距离/上下距离
@@ -171,7 +173,7 @@ def gen_captcha_text_image(image_path,
         create_points()
 
     # 绘制验证码字符
-    text = create_text(xy)
+    text = create_text(xy, font_type)
 
     # 增加字体变形
     if draw_transform:
