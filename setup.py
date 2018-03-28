@@ -26,7 +26,7 @@ setup(
     name="generate_captcha",
     version=version,
     url="https://github.com/seekplum/generate_captcha",
-    keywords=("Pil", "Captcha", "Image"),
+    keywords="Pil, Captcha, Image",
     description="Generate verification code based on Pil library.",
     long_description=readme,
     license="GPL-3.0",
