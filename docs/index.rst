@@ -2,6 +2,9 @@
 Generate Captcha
 ==================
 
+----------
+概要
+----------
 基于第三方库 ``Pillow`` 生成验证码图片
 
 ---------
@@ -29,6 +32,7 @@ Generate Captcha
             # 结束点
             end = (random.randint(0, size[0]), random.randint(0, size[1]))
             draw.line([begin, end], fill=(0, 0, 0))
+
 ----------
 增加干扰点
 ----------
