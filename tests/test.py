@@ -18,6 +18,9 @@ from generate_captcha import gen_captcha_text_image
 
 
 class TestGenerateCaptcha(unittest.TestCase):
+    def setUp(self):
+        pass
+
     def test_gen_captcha_text_image(self):
         """测试生成验证码图片
         """
@@ -31,3 +34,10 @@ class TestGenerateCaptcha(unittest.TestCase):
         file_name = os.path.basename(file_path)
         file_name = file_name.split(".")[0]
         assert text == file_name
+
+    def tearDown(self):
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

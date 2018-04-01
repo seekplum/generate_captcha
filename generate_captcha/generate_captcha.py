@@ -140,7 +140,7 @@ def gen_captcha_text_image(image_path,
         text_ = '%s' % ' '.join(c_chars)  # 每个字符前后以空格隔开
         if font_type_ is None:
             curr_path = os.path.dirname(os.path.abspath(__file__))
-            font_type_ = os.path.join(curr_path, "packages", "msyh.ttf")
+            font_type_ = os.path.join(os.path.dirname(curr_path), "packages", "msyh.ttf")
         font = ImageFont.truetype(font_type_, font_size)
         if xy_ is None:
             font_width, font_height = font.getsize(text_)

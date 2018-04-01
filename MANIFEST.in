@@ -3,6 +3,7 @@ include  README.rst
 graft tests
 graft examples
 graft docs
+graft packages
 
 global-exclude *.py[co]
 
