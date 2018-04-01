@@ -2,10 +2,9 @@
 Generate Captcha
 ==================
 
-----------
-概要
-----------
-基于第三方库 ``Pillow`` 生成验证码图片
+* 基于第三方库 ``Pillow`` 生成验证码图片
+* 注意： 若不指定字体类型，需要把文件中的 ``msyh.ttf`` 拷贝到系统字体库中
+
 
 ---------
 创建画笔
@@ -32,7 +31,6 @@ Generate Captcha
             # 结束点
             end = (random.randint(0, size[0]), random.randint(0, size[1]))
             draw.line([begin, end], fill=(0, 0, 0))
-
 ----------
 增加干扰点
 ----------

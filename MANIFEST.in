@@ -1,9 +1,9 @@
 include  README.rst
+include  generate_captcha/msyh.ttf
 
 graft tests
 graft examples
 graft docs
-graft packages
 
 global-exclude *.py[co]
 
